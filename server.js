@@ -1,11 +1,11 @@
-const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-const app = express();
+const app = new (require('express'))();
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+var compiler = webpack(config)
+app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
+app.use(webpackHotMiddleware(compiler))
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -15,10 +15,14 @@ if (process.env.NODE_ENV === "production") {
 
 // Send every other request to the React app
 // Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + '/index.html')
+})
 
-app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
+app.listen(port, function(error) {
+  if (error) {
+    console.error(error)
+  } else {
+    console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
+  }
+})
