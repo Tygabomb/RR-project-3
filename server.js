@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const config = require('./webpack.config')
+=======
+>>>>>>> master
 
 const express = require("express");
 const path = require("path");
@@ -28,10 +31,18 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
+<<<<<<< HEAD
 app.listen(port, function(error) {
   if (error) {
     console.error(error)
   } else {
     console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
+=======
+app.listen(PORT, function(error) {
+  if (error) {
+    console.error(error)
+  } else {
+    console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", PORT, PORT)
+>>>>>>> master
   }
 })

@@ -6,7 +6,8 @@
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "sequelize": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
