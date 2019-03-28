@@ -15,8 +15,8 @@ module.exports = function (sequelize, DataTypes) {
         fave4: {
             type: DataTypes.STRING,
             allowNull: true,
-        },        
-        fave3: {
+        },
+        fave5: {
             type: DataTypes.STRING,
             allowNull: true,
         },

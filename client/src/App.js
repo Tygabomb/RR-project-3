@@ -6,6 +6,22 @@ import LoginPage from "./components/LoginPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+// This is where the options for Yelp should go (ideally)
+// const options = [
+//   "war",
+//   "pain",
+//   "words",
+//   "love",
+//   "life",
+//   'test',
+//   'test',
+//   'test',
+//   'test',
+//   'test'
+// ];
+
+{/* {<Roulette options={options} baseSize={300} onComplete={handleOnComplete} />} */ }
+
 class App extends Component {
   render() {
     return (
