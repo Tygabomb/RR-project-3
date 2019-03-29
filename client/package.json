@@ -4,11 +4,19 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+<<<<<<< HEAD
     "bootstrap": "^4.3.1",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8"
+=======
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8",
+    "sequelize": "^5.1.1"
+>>>>>>> 9a295b115ff803578583ea7cb8fb57555855136c
   },
   "scripts": {
     "start": "react-scripts start",
