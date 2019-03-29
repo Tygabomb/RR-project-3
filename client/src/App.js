@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { Component } from "react";
 import './App.css';
 import Navbar from "./components/Navbar";
@@ -29,11 +30,19 @@ import Footer from "./components/Footer";
 
 {/* {<Roulette options={options} baseSize={300} onComplete={handleOnComplete} />} */ }
 >>>>>>> 9a295b115ff803578583ea7cb8fb57555855136c
+=======
+import React, { Component } from "react";
+import './App.css';
+import Navbar from "./components/Navbar";
+import FormContainer from "./components/FormContainer"
+import Footer from "./components/Footer"
+>>>>>>> 249de9a03260a674a4cc454911ccff592a96b681
 
 class App extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <Navbar />
         <FormContainer />
@@ -52,6 +61,11 @@ class App extends Component {
           </Switch>
         </Router>
 >>>>>>> 9a295b115ff803578583ea7cb8fb57555855136c
+=======
+        <Navbar />
+        <FormContainer />
+        <Footer /> 
+>>>>>>> 249de9a03260a674a4cc454911ccff592a96b681
       </div>
     );
   }
