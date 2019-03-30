@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import { Provider } from "react-redux";
+import store from "./store";
+
 import './App.css';
 import RegPage from "./components/RegPage";
 import LoginPage from "./components/LoginPage";
@@ -20,12 +24,12 @@ import Footer from "./components/Footer";
 //   'test'
 // ];
 
-{/* {<Roulette options={options} baseSize={300} onComplete={handleOnComplete} />} */ }
+// {/* {<Roulette options={options} baseSize={300} onComplete={handleOnComplete} />} */ }
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Provider store={store}>
         <Router>
           <Switch>
             <Route exact path="/" component={LoginPage} />
@@ -38,7 +42,7 @@ class App extends Component {
             </Route>
           </Switch>
         </Router>
-      </div>
+        </Provider>
     );
   }
 }
