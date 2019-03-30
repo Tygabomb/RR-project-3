@@ -3,6 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -42,10 +43,11 @@ module.exports = conn;
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-app.listen(PORT, (error) => {
+
+app.listen(PORT, function (error) {
   if (error) {
     console.error(error)
   } else {
-    console.info(`==> 🌎 Listening on port %s. Open up http://localhost:%s/ in your browser. ${PORT}`)
+    console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", PORT, PORT)
   }
 })
