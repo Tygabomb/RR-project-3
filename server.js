@@ -4,6 +4,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,6 +19,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Send every other request to the React app
 // Define any API routes before this runs
+<<<<<<< HEAD
 app.get("/", function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
@@ -25,3 +27,16 @@ app.get("/", function(req, res) {
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+=======
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+app.listen(PORT, function (error) {
+  if (error) {
+    console.error(error)
+  } else {
+    console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", PORT, PORT)
+  }
+})
+>>>>>>> master
