@@ -1,9 +1,10 @@
-
 const express = require("express");
 const path = require("path");
+
 const PORT = process.env.PORT || 3001;
 const app = express();
-
+const db  = require('./models')
+const apiRoutes = require("./routes/api/users");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -13,30 +14,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// Use apiRoutes
+app.use("/api", apiRoutes);
 
-
-// Define API routes here
-
-// Send every other request to the React app
-// Define any API routes before this runs
-<<<<<<< HEAD
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + '/index.html')
+db.sequelize.sync( {/*force: true*/}).then(function() {
+  app.listen(PORT, ()=>{
+    console.log(`🌎 ==> API server now on port ${PORT}!`);
+  })
 })
-
-app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
-=======
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-app.listen(PORT, function (error) {
-  if (error) {
-    console.error(error)
-  } else {
-    console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", PORT, PORT)
-  }
-})
->>>>>>> master
