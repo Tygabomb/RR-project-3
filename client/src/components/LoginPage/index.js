@@ -3,6 +3,25 @@ import React, { Component } from "react";
 class LoginPage extends Component {
     super(props) {
     }
+    constructor() {
+        super();
+        this.state = {
+            userName: "",
+            userPassword: "",
+            errors: {}
+        };
+    }
+    onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
+    };
+    onSubmit = e => {
+        e.preventDefault();
+        const userData = {
+            userName: this.state.formUserName,
+            userPassword: this.state.formPassword
+        };
+        console.log(userData);
+    };
 
     componentWillMount = () => {
         document.body.style.backgroundImage = "url('./images/backgroundImage.jpg')";
@@ -33,7 +52,7 @@ class LoginPage extends Component {
                     <form>
                         <div className="form-group mx-5">
                             <label htmlFor="formUsername">Username</label>
-                            <input type="text" className="form-control" id="formUsername" /> 
+                            <input type="text" className="form-control" id="formUsername" />
                         </div>
                         <div className="form-group mx-5">
                             <label htmlFor="formPassword">Password</label>

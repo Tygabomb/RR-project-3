@@ -1,8 +1,35 @@
 import React, { Component } from "react";
 
 class RegPage extends Component {
-    super(props) {
+    constructor() {
+        super();
+        this.state = {
+            regFirstName: "",
+            regLastName: "",
+            regUsername: "",
+            regEmail: "",
+            regPassword: "",
+            pwVerify: "",
+            errors: {}
+        };
     }
+
+    onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
+    };
+
+    onSubmit = e => {
+        e.preventDefault();
+        const newUser = {
+            firstName: this.state.regFirstName,
+            lastName: this.state.regLastName,
+            userName: this.state.regUsername,
+            userEmail: this.state.regEmail,
+            userPassword: this.state.regPassword,
+            password2: this.state.pwVerify
+        };
+        console.log(newUser);
+    };
 
     render() {
         return (
