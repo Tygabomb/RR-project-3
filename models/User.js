@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const users = sequelize.define("users", {
+  const User = sequelize.define("User", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -15,7 +15,6 @@ module.exports = function (sequelize, DataTypes) {
     },
     userName: {
       type: DataTypes.STRING,
-      defaultValue: "UserName",
       allowNull: false
     },
     userPassword: {
@@ -43,5 +42,5 @@ module.exports = function (sequelize, DataTypes) {
       freezeTableName: true,
 
     });
-  return users;
+  return User;
 };
