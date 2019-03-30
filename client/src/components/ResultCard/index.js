@@ -1,7 +1,10 @@
 import React from "react";
 
 function ResultCard(props) {
-    return ();
+    return (
+        <div className="card">
+        </div>
+    );
 }
 
 export default ResultCard;
