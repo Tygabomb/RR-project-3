@@ -9,7 +9,7 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
-const User = require("../../models/User");// @route POST api/users/register
+const {User} = require("../../models");// @route POST api/users/register
 
 // @route POST api/users/register
 // @desc Register user
@@ -22,20 +22,22 @@ router.post("/register", (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    users.findOne({ email: req.body.email }).then(users => {
-        if (user) {
+    User.findOne({ userEmail: req.body.userEmail }).then(users => {
+        if (users) {
             return res.status(400).json({ email: "Email already exists" });
         }
         const newUser = new User({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            userName: req.body.userName,
+            userEmail: req.body.userEmail,
+            userPassword: req.body.userPassword
         });
         // Hash password before saving in database
         bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(newUser.password, salt, (err, hash) => {
+            bcrypt.hash(newUser.userPassword, salt, (err, hash) => {
                 if (err) throw err;
-                newUser.password = hash;
+                newUser.userPassword = hash;
                 newUser
                     .save()
                     .then(user => res.json(user))
@@ -46,3 +48,4 @@ router.post("/register", (req, res) => {
 });
 
 
+module.exports = router

@@ -6,7 +6,7 @@ module.exports = function validateRegistrationInput(data) {
 
   data.firstName = !isEmpty(data.firstName) ? data.firstName : "";
   data.lastName = !isEmpty(data.lastName) ? data.lastName : "";
-  data.userEmail = !isEmpty(data.userEmail) ? data.email : "";
+  data.userEmail = !isEmpty(data.userEmail) ? data.userEmail : "";
   data.userName = !isEmpty(data.userName) ? data.userName : "";
   data.userPassword = !isEmpty(data.userPassword) ? data.userPassword : "";
   data.userPassword2 = !isEmpty(data.userPassword2) ? data.userPassword2 : "";
