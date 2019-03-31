@@ -24,10 +24,10 @@ class Footer extends Component {
                         </div>
                         <div className="col-4 col-sm-3 ml-auto">
                             <ul className="list-group list-group-flush my-3">
-                                <li className="list-group-item"><a className="text-dark" href="/">Ashley</a></li>
-                                <li className="list-group-item"><a className="text-dark" href="/">Bradley</a></li>
-                                <li className="list-group-item"><a className="text-dark" href="/">Brandon</a></li>
-                                <li className="list-group-item"><a className="text-dark" href="/">Josh</a></li>
+                                <li className="list-group-item"><a className="text-dark" href="https://github.com/Amal2774" rel="noopener noreferrer" target="_blank">Ashley</a></li>
+                                <li className="list-group-item"><a className="text-dark" href="https://github.com/bking1989" rel="noopener noreferrer" target="_blank">Bradley</a></li>
+                                <li className="list-group-item"><a className="text-dark" href="https://github.com/Tygabomb" rel="noopener noreferrer" target="_blank">Brandon</a></li>
+                                <li className="list-group-item"><a className="text-dark" href="https://github.com/joshromea" rel="noopener noreferrer" target="_blank">Josh</a></li>
                             </ul>
                         </div>
                         <div className="col-4 col-sm-3 ml-auto">
