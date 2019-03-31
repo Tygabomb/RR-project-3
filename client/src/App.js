@@ -9,6 +9,7 @@ import RegPage from "./components/RegPage";
 import LoginPage from "./components/LoginPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+// import ResultCard from "./components/ResultCard";
 
 // This is where the options for Yelp should go (ideally)
 // const options = [
