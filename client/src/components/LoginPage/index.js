@@ -43,6 +43,8 @@ class LoginPage extends Component {
     }
 
     render() {
+        const { errors } = this.state;
+
         return (
             <div className="container" style={this.containerStyle}>
                 <div className="card" style={this.cardStyle}>
@@ -52,11 +54,25 @@ class LoginPage extends Component {
                     <form>
                         <div className="form-group mx-5">
                             <label htmlFor="formUsername">Username</label>
-                            <input type="text" className="form-control" id="formUsername" />
+                            <input 
+                                onChange={this.onChange}
+                                value={this.state.userName}
+                                error={errors.userName}
+                                type="text" 
+                                className="form-control" 
+                                id="formUsername" 
+                            />
                         </div>
                         <div className="form-group mx-5">
                             <label htmlFor="formPassword">Password</label>
-                            <input type="password" className="form-control" id="formPassword" />
+                            <input 
+                                onChange={this.onChange}
+                                value={this.state.userPassword}
+                                error={errors.userPassword}
+                                type="password" 
+                                className="form-control" 
+                                id="formPassword" 
+                            />
                         </div>
                         <div className="text-center">
                             <button type="button" className="btn btn-primary d-inline-block mx-1">Register</button>
