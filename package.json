@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "rr-project-3",
   "version": "1.0.0",
   "description": " App to find a random resturant near you ",
   "main": "server.js",
@@ -20,14 +20,12 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.4.19",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
