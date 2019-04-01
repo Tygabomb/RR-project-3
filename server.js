@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const db  = require('./models')
 const apiRoutes = require("./routes/api/users");
+const passport = require("passport");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -13,6 +14,12 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
 
 // Use apiRoutes
 // app.use("/api", apiRoutes);
@@ -26,6 +33,7 @@ app.get('/api/users', (req, res) => {
 
   res.json(users);
 });
+
 
 db.sequelize.sync( {/*force: true*/}).then(function() {
   app.listen(PORT, ()=>{

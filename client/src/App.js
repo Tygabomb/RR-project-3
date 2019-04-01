@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Provider } from "react-redux";
-import store from "./store";
+// import { Provider } from "react-redux";
+// import store from "./store";
 
 import './App.css';
 import RegPage from "./components/RegPage";
@@ -30,7 +30,7 @@ import Footer from "./components/Footer";
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      // <Provider store={store}>
         <Router>
           <Switch>
             <Route exact path="/" component={LoginPage} />
@@ -43,7 +43,7 @@ class App extends Component {
             </Route>
           </Switch>
         </Router>
-      </Provider>
+      // </Provider>
     );
   }
 }
