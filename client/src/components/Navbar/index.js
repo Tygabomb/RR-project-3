@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class NavBar extends Component {
-    componentDidMount = () => {
-        document.body.backgroundColor = "white";
-        document.body.backgroundImage = "";
-    }
-
     render() {
         const transBlue = {
             backgroundColor: "rgba(0,123,255,0.5)"
