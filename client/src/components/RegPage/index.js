@@ -26,6 +26,7 @@ class RegPage extends Component {
 
     onSubmit = e => {
         e.preventDefault();
+        console.log('hit');
         const newUser = {
             firstName: this.state.regFirstName,
             lastName: this.state.regLastName,
@@ -118,7 +119,12 @@ class RegPage extends Component {
                         <small>Please re-type your password here.</small>
                     </div>
                     <Link className="btn btn-primary btn-lg float-right" to="/">Cancel</Link>
-                    <Link className="btn btn-primary btn-lg float-right mr-2">Submit</Link>
+                    <button 
+                        className="btn btn-primary btn-lg float-right mr-2" 
+                        onClick={this.onSubmit.bind(this)}
+                    >
+                        Submit
+                    </button>
                 </form>
             </div>
         )
