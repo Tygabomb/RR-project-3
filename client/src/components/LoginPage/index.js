@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class LoginPage extends Component {
     super(props) {
@@ -75,8 +76,8 @@ class LoginPage extends Component {
                             />
                         </div>
                         <div className="text-center">
-                            <button type="button" className="btn btn-primary d-inline-block mx-1">Register</button>
-                            <button type="button" className="btn btn-primary d-inline-block mx-1">Log In</button>
+                            <Link className="btn btn-primary d-inline-block mx-1" to="/register">Register</Link>
+                            <Link className="btn btn-primary d-inline-block mx-1">Log In</Link>
                         </div>
                     </form>
                 </div>
