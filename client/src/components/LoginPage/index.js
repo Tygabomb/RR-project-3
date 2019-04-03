@@ -76,8 +76,18 @@ class LoginPage extends Component {
                             />
                         </div>
                         <div className="text-center">
-                            <Link className="btn btn-primary d-inline-block mx-1" to="/register">Register</Link>
-                            <Link className="btn btn-primary d-inline-block mx-1">Log In</Link>
+                            <Link 
+                                className="btn btn-primary d-inline-block mx-1" 
+                                to="/register"
+                            >
+                                Register
+                            </Link>
+                            <Link
+                                className="btn btn-primary d-inline-block mx-1"
+                                onClick={this.onSubmit}
+                            >
+                                Log In
+                            </Link>
                         </div>
                     </form>
                 </div>
