@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 class NavBar extends Component {
     render() {
         const transBlue = {
-            backgroundColor: "rgba(0,123,255,0.5)"
+            backgroundColor: "rgba(0,123,255,0.5)",
+            boxShadow: "rgba(0,0,0,0.5) 0 0 5px"
         }
 
         return (

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const footerStyle = {
     backgroundColor: "rgb(0,123,255)",
+    boxShadow: "rgba(0,0,0,0.5) 0 0 5px",
     minHeight: "60px"
 }
 
