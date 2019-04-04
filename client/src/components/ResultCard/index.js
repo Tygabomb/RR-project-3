@@ -19,8 +19,8 @@ function ResultCard(props) {
                                 <b>Phone #:</b> {props.phoneNum || "(123) 456-7890"}
                             </li>
                             <li className="list-group-item">
-                                <a className="btn btn-primary mr-2" href={props.website || "https://www.getbootstrap.com/"}>Website</a>
-                                <a className="btn btn-primary text-center text-sm-left" href={props.yelp || "https://www.getbootstrap.com/"}>Yelp Profile</a>
+                                <a className="btn btn-primary mr-2" href={props.website || "https://www.getbootstrap.com/"} rel="noopener noreferrer" target="_blank">Website</a>
+                                <a className="btn btn-primary text-center text-sm-left" href={props.yelp || "https://www.getbootstrap.com/"} rel="noopener noreferrer" target="_blank">Yelp Profile</a>
                             </li>
                         </ul>
                     </div>
