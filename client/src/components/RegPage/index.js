@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class RegPage extends Component {
     constructor() {
@@ -14,12 +15,18 @@ class RegPage extends Component {
         };
     }
 
+    componentWillMount = () => {
+        document.body.style.backgroundImage = "";
+        document.body.style.backgroundColor = "white";
+    }
+
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value });
     };
 
     onSubmit = e => {
         e.preventDefault();
+        console.log('hit');
         const newUser = {
             firstName: this.state.regFirstName,
             lastName: this.state.regLastName,
@@ -111,8 +118,13 @@ class RegPage extends Component {
                         />
                         <small>Please re-type your password here.</small>
                     </div>
-                    <button type="button" className="btn btn-primary btn-lg float-right">Cancel</button>
-                    <button type="button" className="btn btn-primary btn-lg float-right mr-2">Submit</button>
+                    <Link className="btn btn-primary btn-lg float-right" to="/">Cancel</Link>
+                    <button 
+                        className="btn btn-primary btn-lg float-right mr-2" 
+                        onClick={this.onSubmit.bind(this)}
+                    >
+                        Submit
+                    </button>
                 </form>
             </div>
         )

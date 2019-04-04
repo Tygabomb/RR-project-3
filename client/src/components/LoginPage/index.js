@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class LoginPage extends Component {
     super(props) {
@@ -23,22 +24,19 @@ class LoginPage extends Component {
         console.log(userData);
     };
 
-    componentWillMount = () => {
-        document.body.style.backgroundImage = "url('./images/backgroundImage.jpg')";
-        document.body.style.backgroundSize = "cover";
-    }
-
     containerStyle = {
         alignItems: "center",
+        backgroundImage: "url('./images/backgroundImage.jpg')",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
         display: "flex",
         height: "100vh",
-        width: "100vw"
+        width: "100%"
     }
 
     cardStyle = {
         boxShadow: "rgba(0,0,0,0.8) 0 0 10px",
         minHeight: "300px",
-        margin: "0 auto",
         width: "500px"
     }
 
@@ -46,8 +44,8 @@ class LoginPage extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="container" style={this.containerStyle}>
-                <div className="card" style={this.cardStyle}>
+            <div style={this.containerStyle}>
+                <div className="card mx-2 mx-sm-auto" style={this.cardStyle}>
                     <br />
                     <h2 className="text-center">Welcome to R + R!</h2>
                     <br />
@@ -75,8 +73,18 @@ class LoginPage extends Component {
                             />
                         </div>
                         <div className="text-center">
-                            <button type="button" className="btn btn-primary d-inline-block mx-1">Register</button>
-                            <button type="button" className="btn btn-primary d-inline-block mx-1">Log In</button>
+                            <Link 
+                                className="btn btn-primary d-inline-block mx-1" 
+                                to="/register"
+                            >
+                                Register
+                            </Link>
+                            <Link
+                                className="btn btn-primary d-inline-block mx-1"
+                                onClick={this.onSubmit}
+                            >
+                                Log In
+                            </Link>
                         </div>
                     </form>
                 </div>
