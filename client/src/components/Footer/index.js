@@ -34,9 +34,9 @@ class Footer extends Component {
                         </div>
                         <div className="col-4 col-sm-3 ml-auto">
                             <ul className="list-group my-3">
-                                <li className="list-group-item"><Link className="text-dark" to="/">Home</Link></li>
-                                <li className="list-group-item"><a className="text-dark" href="/">Reviews</a></li>
-                                <li className="list-group-item"><a className="text-dark" href="/">Contact</a></li>
+                                <li className="list-group-item"><Link className="text-dark" to="/">Favorites</Link></li>
+                                <li className="list-group-item"><Link className="text-dark" to="/">My Profile</Link></li>
+                                <li className="list-group-item"><Link className="text-dark" to="/">Log Out</Link></li>
                             </ul>
                         </div>
                     </div>
