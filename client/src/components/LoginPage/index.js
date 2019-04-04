@@ -18,7 +18,7 @@ class LoginPage extends Component {
     onSubmit = e => {
         e.preventDefault();
         const userData = {
-            userName: this.state.formUserName,
+            userName: this.state.formUsername,
             userPassword: this.state.formPassword
         };
         console.log(userData);
@@ -54,7 +54,7 @@ class LoginPage extends Component {
                             <label htmlFor="formUsername">Username</label>
                             <input 
                                 onChange={this.onChange}
-                                value={this.state.userName}
+                                // value={this.state.userName}
                                 error={errors.userName}
                                 type="text" 
                                 className="form-control" 
@@ -65,7 +65,7 @@ class LoginPage extends Component {
                             <label htmlFor="formPassword">Password</label>
                             <input 
                                 onChange={this.onChange}
-                                value={this.state.userPassword}
+                                // value={this.state.userPassword}
                                 error={errors.userPassword}
                                 type="password" 
                                 className="form-control" 
