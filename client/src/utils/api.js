@@ -1,4 +1,7 @@
 import axios from "axios";
+import "../../../keys";
+
+const googleMapsKey = new googleMaps(keys.googleMaps);
 
 // Export an object containing methods we'll use for accessing the Yelp API
 
@@ -8,6 +11,22 @@ export default {
   },
   
   getResturantList: function() {
-    return axios.get("https://");
+    return axios.get("https://").then(data => {
+      var obj
+    });
   }
 };
+
+// function initMap() {
+
+//   const restaurantLoc = { lat: -25.344, lng: 131.036 };
+//   // The map, centered at Uluru
+//   var map = new google.maps.Map(
+//       document.getElementById('map'), { zoom: 4, center:  });
+//   // The marker, positioned at Uluru
+//   var marker = new google.maps.Marker({ position: uluru, map: map });
+// }
+
+// <script async defer
+//   src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+// </script>
