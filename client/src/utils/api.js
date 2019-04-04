@@ -12,7 +12,7 @@ export default {
   
   getResturantList: function() {
     return axios.get("https://").then(data => {
-      var obj
+      var obj;
     });
   }
 };
@@ -20,11 +20,11 @@ export default {
 // function initMap() {
 
 //   const restaurantLoc = { lat: -25.344, lng: 131.036 };
-//   // The map, centered at Uluru
-//   var map = new google.maps.Map(
+//   // The map, centered at result restaurant location
+//   const map = new google.maps.Map(
 //       document.getElementById('map'), { zoom: 4, center:  });
-//   // The marker, positioned at Uluru
-//   var marker = new google.maps.Marker({ position: uluru, map: map });
+//   // The marker, positioned at resataurant location
+//   const marker = new google.maps.Marker({ position: restaurantLoc, map: map });
 // }
 
 // <script async defer
