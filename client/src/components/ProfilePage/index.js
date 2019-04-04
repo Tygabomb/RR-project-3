@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 class Profile extends Component {
-    super(props) {}
-
     constructor() {
         super();
         this.state = {
@@ -27,7 +25,7 @@ class Profile extends Component {
         document.getElementById("root").style.flexDirection = "row";
     }
 
-    userImage = { 
+    userImage = {
         // backgroundImage: "url('" + this.profileImage + "')",
         backgroundColor: "grey",
         borderRadius: "50%",
