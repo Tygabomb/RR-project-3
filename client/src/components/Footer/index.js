@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const footerStyle = {
     backgroundColor: "rgb(0,123,255)",
     boxShadow: "rgba(0,0,0,0.5) 0 0 5px",
+    flexShrink: 0,
     minHeight: "60px"
 }
 
@@ -17,7 +18,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer className="d-block fixed-bottom w-100" style={footerStyle}>
+            <footer className="d-block w-100" style={footerStyle}>
                 <div className="container">
                     <div className="row">
                         <div className="col-4 col-sm-6">
