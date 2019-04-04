@@ -79,12 +79,12 @@ class LoginPage extends Component {
                             >
                                 Register
                             </Link>
-                            <Link
+                            <button
                                 className="btn btn-primary d-inline-block mx-1"
                                 onClick={this.onSubmit}
                             >
                                 Log In
-                            </Link>
+                            </button>
                         </div>
                     </form>
                 </div>
