@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 const footerStyle = {
     backgroundColor: "rgb(0,123,255)",
+    boxShadow: "rgba(0,0,0,0.5) 0 0 5px",
+    flexShrink: 0,
     minHeight: "60px"
 }
 
@@ -15,7 +18,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer className="d-block fixed-bottom w-100" style={footerStyle}>
+            <footer className="d-block w-100" style={footerStyle}>
                 <div className="container">
                     <div className="row">
                         <div className="col-4 col-sm-6">
@@ -23,7 +26,7 @@ class Footer extends Component {
                             <img alt="" className="img-fluid d-inline-block" src={"/images/Yelp_trademark_RGB.png"} style={this.imageStyle} />
                         </div>
                         <div className="col-4 col-sm-3 ml-auto">
-                            <ul className="list-group list-group-flush my-3">
+                            <ul className="list-group my-3">
                                 <li className="list-group-item"><a className="text-dark" href="https://github.com/Amal2774" rel="noopener noreferrer" target="_blank">Ashley</a></li>
                                 <li className="list-group-item"><a className="text-dark" href="https://github.com/bking1989" rel="noopener noreferrer" target="_blank">Bradley</a></li>
                                 <li className="list-group-item"><a className="text-dark" href="https://github.com/Tygabomb" rel="noopener noreferrer" target="_blank">Brandon</a></li>
@@ -31,10 +34,10 @@ class Footer extends Component {
                             </ul>
                         </div>
                         <div className="col-4 col-sm-3 ml-auto">
-                            <ul className="list-group list-group-flush my-3">
-                                <li className="list-group-item"><a className="text-dark" href="/">Home</a></li>
-                                <li className="list-group-item"><a className="text-dark" href="/">Reviews</a></li>
-                                <li className="list-group-item"><a className="text-dark" href="/">Contact</a></li>
+                            <ul className="list-group my-3">
+                                <li className="list-group-item"><Link className="text-dark" to="/">Favorites</Link></li>
+                                <li className="list-group-item"><Link className="text-dark" to="/">My Profile</Link></li>
+                                <li className="list-group-item"><Link className="text-dark" to="/">Log Out</Link></li>
                             </ul>
                         </div>
                     </div>
