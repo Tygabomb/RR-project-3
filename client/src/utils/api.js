@@ -27,6 +27,3 @@ export default {
 //   const marker = new google.maps.Marker({ position: restaurantLoc, map: map });
 // }
 
-// <script async defer
-//   src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-// </script>

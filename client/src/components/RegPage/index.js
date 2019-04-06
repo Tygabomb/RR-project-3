@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class RegPage extends Component {
+    super(props) {
+    };
     constructor() {
         super();
         this.state = {
@@ -13,12 +15,12 @@ class RegPage extends Component {
             pwVerify: "",
             errors: {}
         };
-    }
+    };
 
     componentWillMount = () => {
         document.body.style.backgroundImage = "";
         document.body.style.backgroundColor = "white";
-    }
+    };
 
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value });
@@ -26,7 +28,6 @@ class RegPage extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        console.log('hit');
         const newUser = {
             firstName: this.state.regFirstName,
             lastName: this.state.regLastName,
@@ -35,7 +36,11 @@ class RegPage extends Component {
             userPassword: this.state.regPassword,
             password2: this.state.pwVerify
         };
+        
         console.log(newUser);
+
+        this.props.history.push('/app');
+
     };
 
     render() {
@@ -131,4 +136,4 @@ class RegPage extends Component {
     };
 }
 
-export default RegPage;
+export default withRouter(RegPage);

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class LoginPage extends Component {
     super(props) {
-    }
+    };
     constructor() {
         super();
         this.state = {
@@ -11,16 +11,22 @@ class LoginPage extends Component {
             userPassword: "",
             errors: {}
         };
-    }
+    };
+
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value });
     };
+
     onSubmit = e => {
         e.preventDefault();
+
         const userData = {
             userName: this.state.formUsername,
             userPassword: this.state.formPassword
         };
+        
+        this.props.history.push('/app');
+
         console.log(userData);
     };
 
