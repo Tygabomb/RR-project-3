@@ -1,42 +1,17 @@
 var models  = require('../models');
 var express = require('express');
-var router  = express.Router();
+var router  = express.Router()
 
-router.post('/create', function(req, res) {
-  models.User.create({
-    fave1: req.body.fave1
-  }).then(function() {
-    res.redirect('/');
-  });
-});
+  // POST route creating a new user favorite
+app.post("", function (req, res) {
+    console.log(req.body);
+    const { } = req.body;
+    db.Post.create({
+      where: {
+        userName: req.params.userName
+      }
 
-router.get('/:user_id/destroy', function(req, res) {
-  models.User.destroy({
-    where: {
-      id: req.params.userFaves
-    }
-  }).then(function() {
-    res.redirect('/');
-  });
-});
-
-router.post('/:user_id/tasks/create', function (req, res) {
-  models.Task.create({
-    title: req.body.title,
-    faveId: req.params.user_id
-  }).then(function() {
-    res.redirect('/');
-  });
-});
-
-router.get('/:user_id/tasks/:task_id/destroy', function (req, res) {
-  models.Task.destroy({
-    where: {
-      id: req.params.task_id
-    }
-  }).then(function() {
-    res.redirect('/');
-  });
+    })
 });
 
 
