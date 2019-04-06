@@ -121,7 +121,7 @@ class RegPage extends Component {
                     <Link className="btn btn-primary btn-lg float-right" to="/">Cancel</Link>
                     <button 
                         className="btn btn-primary btn-lg float-right mr-2" 
-                        onClick={this.onSubmit.bind(this)}
+                        onClick={this.onSubmit}
                     >
                         Submit
                     </button>
