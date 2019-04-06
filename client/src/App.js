@@ -5,10 +5,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import store from "./store";
 
 import './App.css';
-import RegPage from "./components/RegPage";
+import Application from "./components/App";
+import Footer from "./components/Footer";
 import LoginPage from "./components/LoginPage";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Profile from "./components/ProfilePage";
+import RegPage from "./components/RegPage";
 // import ResultCard from "./components/ResultCard";
 
 // This is where the options for Yelp should go (ideally)
@@ -28,6 +30,10 @@ import Footer from "./components/Footer";
 // {/* {<Roulette options={options} baseSize={300} onComplete={handleOnComplete} />} */ }
 
 class App extends Component {
+  flexBox = {
+    flex: "1 0 auto"
+  }
+
   render() {
     return (
       // <Provider store={store}>
@@ -36,10 +42,20 @@ class App extends Component {
             <Route exact path="/" component={LoginPage} />
             <Route exact path="/app">
               <Navbar />
+              <Application />
               <Footer />
             </Route>
             <Route exact path="/register">
               <RegPage />
+            </Route>
+            <Route exact path="/favorites">
+              <Navbar />
+              <Footer />
+            </Route>
+            <Route exact path="/profile">
+              <Navbar />
+              <Profile />
+              <Footer />
             </Route>
           </Switch>
         </Router>
