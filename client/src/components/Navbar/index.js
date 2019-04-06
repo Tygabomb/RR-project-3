@@ -5,7 +5,8 @@ class NavBar extends Component {
     render() {
         const transBlue = {
             backgroundColor: "rgba(0,123,255,0.5)",
-            boxShadow: "rgba(0,0,0,0.5) 0 0 5px"
+            boxShadow: "rgba(0,0,0,0.5) 0 0 5px",
+            textShadow: "rgba(0,0,0,1) 1px 1px 1px"
         }
 
         return (
