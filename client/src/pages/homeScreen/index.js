@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import Wheel from './components/Wheel'
+import React, { Component } from 'react';
+import Wheel from "../../components/Wheel/";
 
 
-class RestRoulette extends Component {
+class HomeScreen extends Component {
     state = {
         options: [],
         baseSize: 175
@@ -45,4 +45,4 @@ class RestRoulette extends Component {
         )
     }
 }
-export default RestRoulette
+export default HomeScreen
