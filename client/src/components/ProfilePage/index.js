@@ -29,8 +29,8 @@ class Profile extends Component {
         // backgroundImage: "url('" + this.profileImage + "')",
         backgroundColor: "grey",
         borderRadius: "50%",
-        height: "250px",
-        width: "250px",
+        height: "200px",
+        width: "200px",
     }
 
     de_bold = {
@@ -44,14 +44,14 @@ class Profile extends Component {
     render () {
         return (
             <div className="container mt-5" style={this.flexBody}>
-                <div className="card">
+                <div className="card mx-3 mx-sm-5">
                     <div className="card-header"><b>My Profile</b></div>
                     <div className="card-body">
                         <div className="row mx-3">
-                            <div className="col-sm-3">
+                            <div className="col-sm-2">
                                 <div className="mx-auto mx-sm-0" style={this.userImage} />
                             </div>
-                            <div className="col-sm-8 ml-sm-auto mt-3 mt-sm-0">
+                            <div className="col-sm-9 ml-sm-auto mt-3 mt-sm-0">
                                 <h2 className="text-center text-sm-left">User Profile for {this.state.username}</h2>
                                 <br />
                                 <h5>Name: <span style={this.de_bold}>{this.state.firstName} {this.state.lastName}</span></h5>

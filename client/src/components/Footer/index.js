@@ -8,6 +8,10 @@ const footerStyle = {
     minHeight: "60px"
 }
 
+const shadowStyle = {
+    textShadow: "rgba(0,0,0,1) 1px 1px 1px"
+}
+
 class Footer extends Component {
     super(props) {
     }
@@ -22,7 +26,7 @@ class Footer extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-4 col-sm-6">
-                            <p className="text-white d-inline-block mt-3 mt-sm-0">Powered by</p>
+                            <p className="text-white d-inline-block mt-3 mt-sm-0" style={shadowStyle}>Powered by</p>
                             <img alt="" className="img-fluid d-inline-block" src={"/images/Yelp_trademark_RGB.png"} style={this.imageStyle} />
                         </div>
                         <div className="col-4 col-sm-3 ml-auto">
