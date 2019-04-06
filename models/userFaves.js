@@ -24,5 +24,14 @@ module.exports = function (sequelize, DataTypes) {
             freezeTableName: true,
         });
 
+        userFaves.associate = function(models) {
+            // Associating Author with Posts
+            // When an Author is deleted, also delete any associated Posts
+            userFaves.belongsTo(models.User, {
+                foreignKey: {
+                    allowNull: false
+                }
+            });
+          };
     return userFaves;
 }
