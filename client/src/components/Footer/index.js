@@ -14,11 +14,11 @@ const shadowStyle = {
 
 class Footer extends Component {
     super(props) {
-    }
+    };
 
     imageStyle = {
         maxWidth: "120px"
-    }
+    };
 
     render() {
         return (
