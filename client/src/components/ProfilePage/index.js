@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Profile extends Component {
     state = {
-        profileImage: "",
+        profileImage: "https://via.placeholder.com/200",
         username: "JDoe1989",
         firstName: "John",
         lastName: "Doe",
@@ -53,7 +53,7 @@ class Profile extends Component {
     }
 
     userImage = {
-        // backgroundImage: "url('" + this.profileImage + "')",
+        backgroundImage: "url('" + this.state.profileImage +  "')",
         backgroundColor: "grey",
         borderRadius: "50%",
         height: "200px",
@@ -111,8 +111,8 @@ class Profile extends Component {
                                             <li className="list-group-item"><b>Phone #:</b> {location.phoneNum}</li>
                                             <li className="list-group-item"><b>Type:</b> {location.type}</li>
                                             <li className="list-group-item">
-                                                <a className="btn btn-primary mr-2" href={location.website}>Website</a>
-                                                <a className="btn btn-primary" href={location.yelp}>Yelp Page</a>
+                                                <a className="btn btn-primary mr-2" href={location.website} rel="noopener noreferrer" target="_blank">Website</a>
+                                                <a className="btn btn-primary" href={location.yelp} rel="noopener noreferrer" target="_blank">Yelp Page</a>
                                             </li>
                                         </ul>
                                     </div>

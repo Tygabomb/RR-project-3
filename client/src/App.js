@@ -45,9 +45,7 @@ class App extends Component {
               <Application />
               <Footer />
             </Route>
-            <Route exact path="/register">
-              <RegPage />
-            </Route>
+            <Route exact path="/register" component={RegPage} />
             <Route exact path="/favorites">
               <Navbar />
               <Footer />
