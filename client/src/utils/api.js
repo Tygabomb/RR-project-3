@@ -1,16 +1,16 @@
 import axios from "axios";
-import "../../../keys";
+// import "../../../keys";
 
-const googleMapsKey = new googleMaps(keys.googleMaps);
+// const googleMapsKey = new googleMaps(keys.googleMaps);
 
 // Export an object containing methods we'll use for accessing the Yelp API
 
 export default {
   getRandomResturant: function() { 
-    return axios.get("https://api.yelp.com/v3/businesses/search");
+    return axios.get("/api/yelp");
   },
   
-  getResturantList: function() {
+  getResturantMap: function() {
     return axios.get("https://").then(data => {
       var obj;
     });
