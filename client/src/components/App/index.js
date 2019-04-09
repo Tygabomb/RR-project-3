@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HomeScreen from "../../pages/HomeScreen";
 
 class Application extends Component {
     constructor() {
@@ -24,7 +25,9 @@ class Application extends Component {
 
     render () {
         return (
-            <div className="container" style={this.flexBody}></div>
+            <div className="container" style={this.flexBody}> 
+                <HomeScreen />
+            </div>
         )
     };
 }
