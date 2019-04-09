@@ -2,11 +2,14 @@ const db = require('../models')
 
 const Axios = require('axios')
 
-module.exports = function yelp() {
+module.exports = function yelp(req, res) {
+    console.log("Accessing Yelp")
     Axios.get(`https://api.yelp.com/v3/businesses/search`, {
         headers: {
-            Authorization: `Bearer ${YELP_SECRET_KEY} `,
+            Authorization: `Bearer ${process.env.YELP_SECRET_KEY} `,
+            
         },
+
         params: {
             term: 'restaurants',
             location: '85705',
@@ -16,12 +19,8 @@ module.exports = function yelp() {
             sort_by: 'rating'
         }
     })
-        .then(res => {
-            res.data.businesses.forEach(business => {
-                let { name, url, rating, location, image_url, coordinates } = business
-                console.log(business)
-                res.json(business)
-            });
+        .then(response => {
+            res.json(response.data.businesses)
         })
 
 
