@@ -26,6 +26,9 @@ class Application extends Component {
     render () {
         return (
             <div className="container" style={this.flexBody}> 
+                <br />
+                <br />
+                <br />
                 <HomeScreen />
             </div>
         )
