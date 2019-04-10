@@ -5,7 +5,12 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const db  = require('./models')
+<<<<<<< HEAD
 // const apiRoutes = require("./routes/api/users");
+=======
+const apiRoutes = require("./routes/api/users");
+const yelpRoutes = require("./routes/api/allUsers");
+>>>>>>> master
 const passport = require("passport");
 const userRoutes = require("./routes")
 
@@ -26,10 +31,14 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Use apiRoutes 
-// app.use("/api", apiRoutes);
+app.use("/api", apiRoutes);
+app.use("/api", yelpRoutes)
 
+<<<<<<< HEAD
 app.use(userRoutes);
 
+=======
+>>>>>>> master
 // app.get('/api/users', (req, res) => {
 //   const users = [
 //     {id: 1, firstName: 'John', lastName: 'Doe'},
@@ -41,7 +50,7 @@ app.use(userRoutes);
 // });
 
 
-db.sequelize.sync( {/*force: true*/}).then(function() {
+db.sequelize.sync( {force: true}).then(function() {
   app.listen(PORT, ()=>{
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   })

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Wheel from "../../components/Wheel/";
+import API from "../../utils/api"; 
+
+
 
 
 class HomeScreen extends Component {
@@ -12,8 +15,20 @@ class HomeScreen extends Component {
             options: ['war', 'hate', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf']
         })
     }
+
     handleOnComplete = value => {
         return value
+    }
+
+    getRestaurantData = () => {
+        API.getRandomResturant()
+        .then(res => {
+            res.data.forEach(business => {
+                let {name, url, rating, location, image_url, cooridnates} = business
+                console.log(name)
+            });   
+        })
+        .catch(err => console.log(err))
     }
 
     renderWheel = () => {
@@ -31,16 +46,16 @@ class HomeScreen extends Component {
     }
 
 
-    callApi = () => {
-        this.setState({options: ["wingo", "oingo", "boingo"]})
-    }
+    // callApi = () => {
+    //     this.setState({options: ["wingo", "oingo", "boingo"]})
+    // }
 
 
     render() {
         return (
             <div>
                 {this.renderWheel()}
-                <button onClick={this.callApi}>WHOP</button>
+                <button onClick={this.getRestaurantData}>WHOP</button>
             </div>
         )
     }
