@@ -11,11 +11,17 @@ const validateLoginInput = require("../../validation/login");
 // Load User model
 const { User } = require("../../models");// @route POST api/users/register
 
+router.post("/dummy", (req, res) => {
+    console.log(req.body);
+})
+
 router.post("/register", (req, res) => {
+    console.log(req.body)
     // Form validation
     const { errors, isValid } = validateRegisterInput(req.body);
     // Check validation
     if (!isValid) {
+        console.log(errors)
         return res.status(400).json(errors);
     }
     User.findOne({ userEmail: req.body.userEmail }).then(users => {
@@ -29,6 +35,8 @@ router.post("/register", (req, res) => {
             userEmail: req.body.userEmail,
             userPassword: req.body.userPassword
         });
+
+        console.log(newUser)
         // Hash password before saving in database
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(newUser.userPassword, salt, (err, hash) => {
@@ -73,7 +81,7 @@ router.post("/", (req, res) => {
                     payload,
                     keys.secretOrKey,
                     {
-                        expiresIn: 3000// 7 days in seconds
+                        expiresIn: 60// 7 days in seconds
                     },
                     (err, token) => {
                         res.json({

@@ -1,24 +1,13 @@
 const path = require('path')
 const router = require('express').Router()
-const apiRoutes = require('./api')
+const userRoutes = require('./api/users')
 
 // API Routes
-router.use('/api', apiRoutes)
-
-router.get('/', function(req, res) {
- models.User.findAll({
-   include: [ models.Task ]
- }).then(function(users) {
-   res.render('index', {
-     title: 'Sequelize: Express Example',
-     users: users
-   });
- });
-});
+router.use('/api', userRoutes)
 
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
+router.get("*", function(req, res) {
  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
