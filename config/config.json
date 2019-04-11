@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "WhereintheworldisBunny87",
+    "password": "starr801",
     "database": "restaurantrouletteDB",
     "host": "127.0.0.1",
     "port": 3306,
@@ -10,7 +10,6 @@
   "test": {
     "username": "root",
     "password": "starr801",
-    "password": "WhereintheworldisBunny87",
     "database": "restaurantrouletteDB",
     "host": "127.0.0.1",
     "port": 3306,

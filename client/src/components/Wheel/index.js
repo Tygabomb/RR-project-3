@@ -17,6 +17,8 @@ class Roulette extends React.Component {
         this.handleOnClick = this.handleOnClick.bind(this);
         this.spin = this.spin.bind(this);
         this.rotate = this.rotate.bind(this);
+        this.drawRouletteWheel = this.drawRouletteWheel.bind(this)
+        this.drawAPIWheel = this.drawAPIWheel.bind(this)
     }
 
     static propTypes = {
@@ -31,12 +33,22 @@ class Roulette extends React.Component {
     static defaultProps = {
         options: ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10'],
         baseSize: 275,
+        chosenName: '',
+        chosenUrl: '',
+        chosenRating: 0,
+        chosenLocation: '',
+        chosenCoordinates: {
+            latitude: 0,
+            longitude: 0
+        },
+        chosenImage_url: '',
         spinAngleStart: Math.random() * 10 + 10,
         spinTimeTotal: Math.random() * 3 + 4 * 1000,
     };
 
     componentDidMount() {
-        this.drawRouletteWheel();
+        this.drawAPIWheel()
+        // this.drawRouletteWheel();
     }
 
     byte2Hex(n) {
@@ -144,7 +156,7 @@ class Roulette extends React.Component {
 
     stopRotateWheel() {
         let { startAngle, arc } = this.state;
-        const { options, baseSize } = this.props;
+        const { options, baseSize, chosenName, chosenUrl, chosenRating, chosenLocation, chosenCoordinates, chosenImage_url } = this.props;
 
         const canvas = this.refs.canvas;
         const ctx = canvas.getContext('2d');
@@ -157,8 +169,13 @@ class Roulette extends React.Component {
         const text = options[index]
         // ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 3);
         ctx.restore();
-        this.props.onComplete(console.log(text));
+        this.props.onComplete(this.setState({ chosenName: text }, () => {
+            this.props.setChosenName(text)
+        }));
+        console.log(this.state.chosenName)
     }
+
+
 
     easeOut(t, b, c, d) {
         const ts = (t /= d) * t;
@@ -170,6 +187,11 @@ class Roulette extends React.Component {
         this.spin();
     }
 
+    drawAPIWheel() {
+        this.props.callRestAPI(this.drawRouletteWheel)
+    }
+
+
     render() {
         const { baseSize } = this.props;
 
@@ -179,7 +201,8 @@ class Roulette extends React.Component {
                     <canvas ref="canvas" width={baseSize * 2} height={baseSize * 2} className="roulette-canvas"></canvas>
                 </div>
                 <div className="roulette-container">
-                    <input type="button" value="spin" onClick={this.handleOnClick} className="button" id="spin" />
+                    <input type="button" value="spin" onClick={this.handleOnClick} className="button" id="SPIN" />
+                    <input type="button" value="FILL THE WHEEL" onClick={this.drawAPIWheel} className="button" id="drawwheel" />
                 </div>
             </div>
         );

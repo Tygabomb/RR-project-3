@@ -9,7 +9,7 @@ import API from "../../utils/api";
 class HomeScreen extends Component {
     state = {
         options: [],
-        baseSize: 275,
+        baseSize: 300,
         chosenName: '',
         chosenUrl: '',
         chosenRating: 0,
@@ -26,27 +26,36 @@ class HomeScreen extends Component {
         })
     }
 
+    setChosenName = name => {
+        this.setState({ chosenName: name })
+    }
+
     handleOnComplete = value => {
         return value
     }
 
-    getRestaurantData = (e) => {
-        e.preventDefault()
+    getRestaurantData = (cb) => {
+
         API.getRandomResturant()
             .then(res => {
                 // for (let i = 0; i < res.data.length; i++) {
                 //     let { name, url, rating, location, image_url, cooridnates } = res.data
                 //     this.setState({ options: [name[i]] })
                 // }
-                var nameArr = []
+                let nameArr = []
 
                 res.data.forEach(business => {
                     let { name, url, rating, location, image_url, cooridnates } = business
                     console.log(name)
                     nameArr.push(name)
                     console.log(nameArr)
-                    this.setState({ options: nameArr })
+                    this.setState({ options: nameArr }, () => {
+                        cb()
+                    })
                 })
+            })
+            .then(business => {
+
             })
             .catch(err => console.log(err))
     }
@@ -56,6 +65,8 @@ class HomeScreen extends Component {
             const { options } = this.state
             return (
                 <Wheel
+                    setChosenName={this.setChosenName}
+                    callRestAPI={this.getRestaurantData}
                     options={this.state.options}
                     baseSize={this.state.baseSize}
                     onComplete={this.handleOnComplete}
@@ -75,7 +86,6 @@ class HomeScreen extends Component {
         return (
             <div>
                 {this.renderWheel()}
-                <button onClick={this.getRestaurantData} id='fill-btn'>FILL YOUR WHEEL</button>
             </div>
         )
     }
