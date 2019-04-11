@@ -141,6 +141,7 @@ class Roulette extends React.Component {
         }
     }
 
+
     stopRotateWheel() {
         let { startAngle, arc } = this.state;
         const { options, baseSize } = this.props;
@@ -154,9 +155,9 @@ class Roulette extends React.Component {
         ctx.save();
         ctx.font = 'bold 20px Helvetica, Arial';
         const text = options[index]
-        ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 3);
+        // ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 3);
         ctx.restore();
-        this.props.onComplete(alert(text));
+        this.props.onComplete(console.log(text));
     }
 
     easeOut(t, b, c, d) {

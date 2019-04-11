@@ -4,10 +4,9 @@ const Axios = require('axios')
 
 module.exports = function yelp(req, res) {
     console.log("Accessing Yelp")
-    Axios.get(`https://api.yelp.com/v3/businesses/search`, {
+    Axios.get("https://api.yelp.com/v3/businesses/search", {
         headers: {
-            Authorization: `Bearer ${process.env.YELP_SECRET_KEY} `,
-            
+            Authorization: `Bearer ${process.env.YELP_SECRET_KEY}`,
         },
 
         params: {
@@ -22,7 +21,4 @@ module.exports = function yelp(req, res) {
         .then(response => {
             res.json(response.data.businesses)
         })
-
-
-        .catch(err => res.status(422).json(err))
 }
