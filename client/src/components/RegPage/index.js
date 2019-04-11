@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 import { Link, withRouter } from "react-router-dom";
 
 class RegPage extends Component {
@@ -34,11 +35,20 @@ class RegPage extends Component {
             userName: this.state.regUsername,
             userEmail: this.state.regEmail,
             userPassword: this.state.regPassword,
-            password2: this.state.pwVerify
+            userPassword2: this.state.pwVerify
         };
-        
-        console.log(newUser);
 
+        axios({
+            method: 'post',
+            url: '/api/register',
+            data: newUser
+        }).then(function(res) {
+            console.log(res)
+        }).catch(function (error) {
+            console.log(error);
+        });
+        
+        
         this.props.history.push('/app');
 
     };

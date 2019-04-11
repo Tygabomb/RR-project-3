@@ -24,14 +24,6 @@ module.exports = function (sequelize, DataTypes) {
     userEmail: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    userLat: {
-        type: DataTypes.DECIMAL(10,8),
-        allowNull: true,
-    },
-    userLng: {
-        type: DataTypes.DECIMAL(11, 8),
-        allowNull: true
     }
   }, {
       freezeTableName: true,
