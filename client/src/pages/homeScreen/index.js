@@ -40,13 +40,13 @@ class HomeScreen extends Component {
         API.getRandomResturant()
             .then(res => {
                 let apiDataArr = []
-                apiDataArr.push(res.data)
                 let nameArr = []
                 res.data.forEach(business => {
-                    let { name } = business
+                    let { name, id, image_url, rating, coordinates, price, location } = business
                     // console.log(name)
                     nameArr.push(name)
-                    // console.log(nameArr)
+                    apiDataArr.push({ restName: name, restId: id, restImageUrl: image_url, restRating: rating, restCoordinates: coordinates, restPrice: price, restLocation: location})
+                    // console.log(nameArr)  
                     this.setState({
                         options: nameArr,
                         apiData: apiDataArr

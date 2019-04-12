@@ -33,15 +33,6 @@ class Roulette extends React.Component {
     static defaultProps = {
         options: ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10'],
         baseSize: 275,
-        chosenName: '',
-        chosenUrl: '',
-        chosenRating: 0,
-        chosenLocation: '',
-        chosenCoordinates: {
-            latitude: 0,
-            longitude: 0
-        },
-        chosenImage_url: '',
         spinAngleStart: Math.random() * 10 + 10,
         spinTimeTotal: Math.random() * 3 + 4 * 1000,
     };
@@ -97,7 +88,7 @@ class Roulette extends React.Component {
             ctx.strokeStyle = 'black';
             ctx.lineWidth = 2;
 
-            ctx.font = '14px Helvetica, Arial';
+            ctx.font = 'bolder 14px Helvetica, Arial';
 
             for (let i = 0; i < options.length; i++) {
                 const angle = startAngle + i * arc;
@@ -156,7 +147,7 @@ class Roulette extends React.Component {
 
     stopRotateWheel() {
         let { startAngle, arc } = this.state;
-        const { options, baseSize, chosenName, chosenUrl, chosenRating, chosenLocation, chosenCoordinates, chosenImage_url } = this.props;
+        const { options, baseSize, } = this.props;
 
         const canvas = this.refs.canvas;
         const ctx = canvas.getContext('2d');
