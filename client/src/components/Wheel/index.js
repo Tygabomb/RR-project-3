@@ -33,15 +33,6 @@ class Roulette extends React.Component {
     static defaultProps = {
         options: ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10'],
         baseSize: 275,
-        chosenName: '',
-        chosenUrl: '',
-        chosenRating: 0,
-        chosenLocation: '',
-        chosenCoordinates: {
-            latitude: 0,
-            longitude: 0
-        },
-        chosenImage_url: '',
         spinAngleStart: Math.random() * 10 + 10,
         spinTimeTotal: Math.random() * 3 + 4 * 1000,
     };
@@ -88,7 +79,7 @@ class Roulette extends React.Component {
         const canvas = this.refs.canvas;
         if (canvas.getContext) {
             const outsideRadius = baseSize - 20;
-            const textRadius = baseSize - 45;
+            const textRadius = baseSize - 100;
             const insideRadius = 0;
 
             ctx = canvas.getContext('2d');
@@ -97,7 +88,7 @@ class Roulette extends React.Component {
             ctx.strokeStyle = 'black';
             ctx.lineWidth = 2;
 
-            ctx.font = '14px Helvetica, Arial';
+            ctx.font = 'bolder 14px Helvetica, Arial';
 
             for (let i = 0; i < options.length; i++) {
                 const angle = startAngle + i * arc;
@@ -156,7 +147,7 @@ class Roulette extends React.Component {
 
     stopRotateWheel() {
         let { startAngle, arc } = this.state;
-        const { options, baseSize, chosenName, chosenUrl, chosenRating, chosenLocation, chosenCoordinates, chosenImage_url } = this.props;
+        const { options, baseSize, } = this.props;
 
         const canvas = this.refs.canvas;
         const ctx = canvas.getContext('2d');
@@ -165,7 +156,7 @@ class Roulette extends React.Component {
         const arcd = arc * 180 / Math.PI;
         const index = Math.floor((360 - degrees % 360) / arcd);
         ctx.save();
-        ctx.font = 'bold 20px Helvetica, Arial';
+        ctx.font = 'bold 5px Helvetica, Arial';
         const text = options[index]
         // ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 3);
         ctx.restore();
