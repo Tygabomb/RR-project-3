@@ -10,6 +10,7 @@ class HomeScreen extends Component {
     state = {
         options: [],
         baseSize: 300,
+        apiData: [],
         chosenName: '',
         chosenUrl: '',
         chosenRating: 0,
@@ -38,24 +39,22 @@ class HomeScreen extends Component {
 
         API.getRandomResturant()
             .then(res => {
-                // for (let i = 0; i < res.data.length; i++) {
-                //     let { name, url, rating, location, image_url, cooridnates } = res.data
-                //     this.setState({ options: [name[i]] })
-                // }
+                let apiDataArr = []
+                apiDataArr.push(res.data)
                 let nameArr = []
-
                 res.data.forEach(business => {
-                    let { name, url, rating, location, image_url, cooridnates } = business
-                    console.log(name)
+                    let { name } = business
+                    // console.log(name)
                     nameArr.push(name)
-                    console.log(nameArr)
-                    this.setState({ options: nameArr }, () => {
+                    // console.log(nameArr)
+                    this.setState({
+                        options: nameArr,
+                        apiData: apiDataArr
+                    }, () => {
                         cb()
                     })
                 })
-            })
-            .then(business => {
-
+                console.log(this.state.apiData)
             })
             .catch(err => console.log(err))
     }

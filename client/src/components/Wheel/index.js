@@ -88,7 +88,7 @@ class Roulette extends React.Component {
         const canvas = this.refs.canvas;
         if (canvas.getContext) {
             const outsideRadius = baseSize - 20;
-            const textRadius = baseSize - 45;
+            const textRadius = baseSize - 100;
             const insideRadius = 0;
 
             ctx = canvas.getContext('2d');
@@ -165,7 +165,7 @@ class Roulette extends React.Component {
         const arcd = arc * 180 / Math.PI;
         const index = Math.floor((360 - degrees % 360) / arcd);
         ctx.save();
-        ctx.font = 'bold 20px Helvetica, Arial';
+        ctx.font = 'bold 5px Helvetica, Arial';
         const text = options[index]
         // ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 3);
         ctx.restore();
