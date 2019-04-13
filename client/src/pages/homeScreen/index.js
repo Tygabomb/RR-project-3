@@ -18,7 +18,7 @@ class HomeScreen extends Component {
         chosenLat: 0,
         chosenlong: 0,
         chosenImage_url: '',
-        chosenCategories: '',
+        chosenCategory: '',
         chosenPhoneNum: '',
         chosenId: '',
         chosenPrice: '',
@@ -39,7 +39,7 @@ class HomeScreen extends Component {
             const addressLine1 = restLocation.display_address[0]
             const addressLine2 = restLocation.display_address[1]
             const addressLine3 = restLocation.display_address[2]
-            const categorie1 = restCategories[0].title
+            const title1 = restCategories[0].title
             const lat = restCoordinates.latitude
             const long = restCoordinates.longitude
             if (restName === this.state.chosenName) {
@@ -53,7 +53,7 @@ class HomeScreen extends Component {
                     chosenAddress1: addressLine1,
                     chosenAddress2: addressLine2,
                     chosenAddress3: addressLine3,
-                    chosenCategories: categorie1,
+                    chosenCategory: title1,
                     chosenPhoneNum: restPhoneNum,
                     chosenYelpUrl: yelpUrl
                 })
