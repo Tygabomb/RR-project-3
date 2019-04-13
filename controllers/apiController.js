@@ -19,7 +19,6 @@ module.exports = function yelp(req, res) {
         }
     })
         .then(response => {
-            console.log(response.data.businesses)
             res.json(response.data.businesses)
         })
 }

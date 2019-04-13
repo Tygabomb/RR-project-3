@@ -23,9 +23,9 @@ class Application extends Component {
         flex: "1 0 auto"
     }
 
-    render () {
+    render() {
         return (
-            <div className="container" style={this.flexBody}> 
+            <div className="container" style={this.flexBody}>
                 <br />
                 <br />
                 <br />
