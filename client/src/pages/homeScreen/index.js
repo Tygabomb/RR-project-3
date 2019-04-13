@@ -18,7 +18,7 @@ class HomeScreen extends Component {
         chosenLat: 0,
         chosenlong: 0,
         chosenImage_url: '',
-        chosenCategories: [],
+        chosenCategory: '',
         chosenPhoneNum: '',
         chosenId: '',
         chosenPrice: '',
@@ -33,20 +33,16 @@ class HomeScreen extends Component {
         this.setState({ chosenName: name })
     }
 
-    // setUserLocation = location => {
-    //     this.setState({ })
-    // }
-
     handleOnComplete = () => {
         for (let i = 0; i < this.state.apiData.length; i++) {
             const { restName, restId, restImageUrl, restRating, restCoordinates, restPrice, restLocation, restCategories, restPhoneNum, yelpUrl } = this.state.apiData[i]
             const addressLine1 = restLocation.display_address[0]
             const addressLine2 = restLocation.display_address[1]
             const addressLine3 = restLocation.display_address[2]
+            const title1 = restCategories[0].title
             const lat = restCoordinates.latitude
             const long = restCoordinates.longitude
             if (restName === this.state.chosenName) {
-                console.log(addressLine1, addressLine2, addressLine3)
                 this.setState({
                     chosenId: restId,
                     chosenImage_url: restImageUrl,
@@ -57,7 +53,7 @@ class HomeScreen extends Component {
                     chosenAddress1: addressLine1,
                     chosenAddress2: addressLine2,
                     chosenAddress3: addressLine3,
-                    chosenCategories: restCategories,
+                    chosenCategory: title1,
                     chosenPhoneNum: restPhoneNum,
                     chosenYelpUrl: yelpUrl
                 })
@@ -104,7 +100,6 @@ class HomeScreen extends Component {
     render() {
         return (
             <div>
-                {/* {this.getLocation()} */}
                 {this.renderWheel()}
             </div>
         )
