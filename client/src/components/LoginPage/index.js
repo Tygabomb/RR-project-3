@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import api from "../../utils/api";
 
 class LoginPage extends Component {
     super(props) {
@@ -20,14 +21,16 @@ class LoginPage extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const userData = {
-            userName: this.state.formUsername,
-            userPassword: this.state.formPassword
-        };
-        
-        this.props.history.push('/app');
+        // const userData = {
+        //     userName: this.state.formUsername,
+        //     userPassword: this.state.formPassword
+        // };
+        api.login(this.state.formUsername, this.state.formPassword)
+        .then(res=>{
+            console.log(res.data);
+        })
+        .catch(err=>console.log(err))
 
-        console.log(userData);
     };
 
     containerStyle = {

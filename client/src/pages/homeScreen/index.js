@@ -24,7 +24,7 @@ class HomeScreen extends Component {
         API.getRandomResturant()
         .then(res => {
             res.data.forEach(business => {
-                let {name, url, rating, location, image_url, cooridnates} = business
+                let {name, url, rating, location, image_url, coordinates} = business
                 console.log(name)
             });   
         })

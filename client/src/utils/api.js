@@ -1,4 +1,5 @@
 import axios from "axios";
+import { runInNewContext } from "vm";
 // import "../../../keys";
 
 // const googleMapsKey = new googleMaps(keys.googleMaps);
@@ -14,6 +15,17 @@ export default {
     return axios.get("https://").then(data => {
       var obj;
     });
+  },
+  login: function(username, password){
+    return axios.post('/api/login', {
+      username,
+      password
+    })
+  },
+  app: function() {
+    return axios.get('/api/authenticate').then(res =>{
+        console.log(res)
+    })
   }
 };
 
