@@ -4,7 +4,26 @@ import HomeScreen from "../../pages/homeScreen";
 class Application extends Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            latitude: 0,
+            longitude: 0
+        }
+        // this.getPosition = this.getPosition.bind(this)
+    }
+
+
+    getPosition = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(displayLocationInfo);
+
+            function displayLocationInfo(position) {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                // this.setState({ latitude: lat, longitude: lng })
+            }
+        } else {
+            console.log("browser doesn't support geolocation api");
+        }
     }
 
     componentDidMount = () => {
@@ -26,6 +45,7 @@ class Application extends Component {
     render() {
         return (
             <div className="container" style={this.flexBody}>
+                {this.getPosition()}
                 <br />
                 <br />
                 <br />
