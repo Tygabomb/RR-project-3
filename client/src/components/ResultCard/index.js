@@ -1,4 +1,29 @@
 import React from "react";
+import axios from "axios";
+
+
+// onClick and onSubmit nees to be added to star button on card
+onSubmit = e => {
+    e.preventDefault();
+
+    const restaurant = {
+        restaurantName: this.state.chosenName,
+        restaurantAdd: this.state.chosenAddress,
+        restaurantAdd2: this.state.chosenAddress,
+        resLat: this.state.something,
+        resLong: this.state.something,
+    };
+
+    axios({
+        method: 'post',
+        url: '/api/restaurants',
+        data: restaurant
+    }).then(function(res) {
+        console.log(res)
+    }).catch(function (error) {
+        console.log(error);
+    });
+};
 
 function ResultCard(props) {
     return (
