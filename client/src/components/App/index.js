@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import HomeScreen from "../../pages/homeScreen";
 import Axios from 'axios'
+=======
+import HomeScreen from "../../pages/HomeScreen";
+>>>>>>> master
 
 class Application extends Component {
     constructor() {
