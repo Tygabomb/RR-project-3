@@ -22,6 +22,15 @@ export default {
       password
     })
   },
+  restaurant: function(restaurantName, resLat, resLong, restaurantAdd, restaurantAdd2){
+    return axios.post('/restuarants', {
+      restaurantName,
+      resLat,
+      resLong,
+      restaurantAdd,
+      restaurantAdd2
+    })
+  },
   app: function() {
     return axios.get('/api/authenticate').then(res =>{
         console.log(res)

@@ -28,6 +28,8 @@ class LoginPage extends Component {
         api.login(this.state.formUsername, this.state.formPassword)
         .then(res=>{
             console.log(res.data);
+            localStorage.setItem('token', res.data.token)
+            this.props.history.push('/app')
         })
         .catch(err=>console.log(err))
 

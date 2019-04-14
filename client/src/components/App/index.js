@@ -27,6 +27,7 @@ class Application extends Component {
     }
 
     componentDidMount = () => {
+        
         document.getElementById("root").style.height = "100vh";
         document.getElementById("root").style.display = "flex";
         document.getElementById("root").style.flexDirection = "column";
@@ -50,6 +51,7 @@ class Application extends Component {
                 <br />
                 <br />
                 <HomeScreen />
+
             </div>
         )
     };

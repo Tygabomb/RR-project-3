@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class NavBar extends Component {
+    logoutUser = () => {
+        localStorage.clear();
+        this.props.history.push('/')
+    };
+
     render() {
         const transBlue = {
             backgroundColor: "rgba(0,123,255,0.5)",
@@ -17,11 +22,15 @@ class NavBar extends Component {
                     <li className="nav-item d-inline-block px-3 text-white">|</li>
                     <li className="nav-item active d-inline-block"><Link className="nav-link px-3" to="/profile">My Profile</Link></li>
                     <li className="nav-item d-inline-block px-3 text-white">|</li>
-                    <li className="nav-item active d-inline-block"><Link className="nav-link px-3" to="/">Log Out</Link></li>
+                    <li className="nav-item active d-inline-block">
+                        <button className="nav-link px-3" onClick={this.logoutUser}>
+                            Log Out
+                        </button>
+                    </li>
                 </ul>
             </nav>
         )
     };
 }
 
-export default NavBar;
+export default withRouter (NavBar);

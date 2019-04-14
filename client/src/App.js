@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 // import { Provider } from "react-redux";
 // import store from "./store";
@@ -28,6 +29,33 @@ import RegPage from "./components/RegPage";
 // ];
 
 // {/* {<Roulette options={options} baseSize={300} onComplete={handleOnComplete} />} */ }
+const checkAuth = () => {
+  axios({
+    method: 'get',
+    url: '/api/authenticate',
+    headers: {
+      Authorization: localStorage.getItem('token')
+    }
+  }).then(function ({data}) {
+    console.log(true)
+    return true
+  }).catch(function (error) {
+    return false;
+  });
+};
+
+const PrivateRoute = ({ component: RouteComponent, ...rest }) => (
+  <Route {...rest} render={(props) => (
+    checkAuth()
+      ? (
+      <React.Fragment>
+        <Navbar />
+        <RouteComponent {...props} />
+            <Footer />
+        </React.Fragment>)
+      : <Redirect to='/' />
+  )} />
+)
 
 class App extends Component {
   flexBox = {
@@ -36,26 +64,22 @@ class App extends Component {
 
   render() {
     return (
-        <Router>
-          <Switch>
-            <Route exact path="/" component={LoginPage} />
-            <Route exact path="/app">
-              <Navbar />
-              <Application />
-              <Footer />
-            </Route>
-            <Route exact path="/register" component={RegPage} />
-            <Route exact path="/favorites">
-              <Navbar />
-              <Footer />
-            </Route>
-            <Route exact path="/profile">
-              <Navbar />
-              <Profile />
-              <Footer />
-            </Route>
-          </Switch>
-        </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={LoginPage} />
+          <PrivateRoute exact path="/app" component={Application} />
+          <Route exact path="/register" component={RegPage} />
+          {/* <Route exact path="/favorites">
+            <Navbar />
+            <Footer />
+          </Route> */}
+          <PrivateRoute exact path="/profile">
+            <Navbar />
+            <Profile />
+            <Footer />
+          </PrivateRoute>
+        </Switch>
+      </Router>
     );
   }
 }

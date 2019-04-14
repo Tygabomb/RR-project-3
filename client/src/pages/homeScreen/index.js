@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter } from "react-router-dom";
 import Wheel from "../../components/Wheel/";
 import API from "../../utils/api";
 
@@ -24,9 +25,14 @@ class HomeScreen extends Component {
         chosenPrice: '',
     }
     componentDidMount() {
+        // try{this.props.checkAuth()
+        // }catch(err){
+        //     this.props.history.push('/')
+        // }
         this.setState({
             options: ['', '', '', '', '', '', '', '', '', '']
         })
+
     }
 
     setChosenName = name => {
@@ -110,4 +116,4 @@ class HomeScreen extends Component {
         )
     }
 }
-export default HomeScreen
+export default withRouter(HomeScreen);
