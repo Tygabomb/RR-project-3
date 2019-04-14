@@ -13,6 +13,8 @@ class ResultCard extends Component {
             chosenCategory: "",
             chosenPhoneNum: "",
             chosenImageUrl: "",
+            chosenRating: 0,
+            chosenPrice: "",
             errors: {}
         };
     };
@@ -41,13 +43,16 @@ class ResultCard extends Component {
                             <h5 className="ml-sm-3 mb-3 text-center text-sm-left">{this.props.chosenAddress1} {this.props.chosenAddress2} {this.props.chosenAddress3}</h5>
                             <ul className="list-group list-group-flush mx-3 ml-sm-0 mr-sm-3">
                                 <li className="list-group-item">
-                                    <b>Type:</b> {this.props.chosenCategory || "Diner"}
+                                    <b>Type:</b> {this.props.chosenCategory}
                                 </li>
                                 <li className="list-group-item">
                                     <b>Phone #:</b> {this.props.chosenPhoneNum}
                                 </li>
                                 <li className="list-group-item">
-                                    <a className="btn btn-primary text-center text-sm-left" href={this.props.chosenYelpUrl || "https://www.getbootstrap.com/"} rel="noopener noreferrer" target="_blank">Yelp Profile</a>
+                                    <b>Rating:</b> {this.props.chosenRating}⭐    ||    <b>Price Range:</b> {this.props.chosenPrice}
+                                </li>
+                                <li className="list-group-item">
+                                    <a className="btn btn-primary text-center text-sm-left" href={this.props.chosenYelpUrl} rel="noopener noreferrer" target="_blank">Yelp Profile</a>
                                 </li>
                             </ul>
                         </div>

@@ -6,11 +6,11 @@ import axios from "axios";
 // Export an object containing methods we'll use for accessing the Yelp API
 
 export default {
-  getRandomResturant: function() { 
+  getRandomResturant: function () {
     return axios.get("/api/yelp");
   },
-  
-  getResturantMap: function() {
+
+  getResturantMap: function () {
     return axios.get("https://").then(data => {
       var obj;
     });

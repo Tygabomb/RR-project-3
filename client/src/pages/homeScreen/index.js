@@ -22,7 +22,7 @@ class HomeScreen extends Component {
         chosenCategory: '',
         chosenPhoneNum: '',
         chosenId: '',
-        chosenPrice: '',
+        chosenPrice: ''
     }
     componentDidMount() {
         this.setState({
@@ -110,6 +110,8 @@ class HomeScreen extends Component {
                     chosenCategory={this.state.chosenCategory}
                     chosenPhoneNum={this.state.chosenPhoneNum}
                     chosenYelpUrl={this.state.chosenYelpUrl}
+                    chosenRating={this.state.chosenRating}
+                    chosenPrice={this.state.chosenPrice}
                 />)
         } else {
             return false
