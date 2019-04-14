@@ -11,7 +11,7 @@ module.exports = function yelp(req, res) {
 
         params: {
             term: 'restaurants',
-            location: 'tucson, az',
+            location: '85705',
             limit: 10,
             radius: 8046,
             open_now: true,

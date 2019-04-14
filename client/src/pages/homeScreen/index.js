@@ -1,33 +1,28 @@
 import React, { Component } from 'react';
 import Wheel from "../../components/Wheel/";
 import API from "../../utils/api";
-import ResultCard from "../../components/ResultCard"
+import ResultCard from '../../components/ResultCard'
 
 
 
 class HomeScreen extends Component {
-    super(props) {
-    };
-    constructor() {
-        super();
-        this.state = {
-            options: [],
-            baseSize: 300,
-            apiData: [],
-            chosenName: '',
-            chosenYelpUrl: '',
-            chosenRating: 0,
-            chosenAddress1: '',
-            chosenAddress2: '',
-            chosenAddress3: '',
-            chosenLat: 0,
-            chosenlong: 0,
-            chosenImage_url: '',
-            chosenCategory: '',
-            chosenPhoneNum: '',
-            chosenId: '',
-            chosenPrice: '',
-        }
+    state = {
+        options: [],
+        baseSize: 300,
+        apiData: [],
+        chosenName: '',
+        chosenYelpUrl: '',
+        chosenRating: 0,
+        chosenAddress1: '',
+        chosenAddress2: '',
+        chosenAddress3: '',
+        chosenLat: 0,
+        chosenlong: 0,
+        chosenImage_url: '',
+        chosenCategory: '',
+        chosenPhoneNum: '',
+        chosenId: '',
+        chosenPrice: '',
     }
     componentDidMount() {
         this.setState({
@@ -104,14 +99,17 @@ class HomeScreen extends Component {
     }
 
     renderResCard = () => {
-        if (this.state.chosenCategories.length > 0) {
+        if (this.state.chosenCategory.length > 0) {
             return (
                 <ResultCard
                     chosenImage_url={this.state.chosenImage_url}
                     chosenName={this.state.chosenName}
-                    chosenAddress={this.state.chosenAddress}
-                    chosenCategories={this.state.chosenCategories}
+                    chosenAddress1={this.state.chosenAddress1}
+                    chosenAddress2={this.state.chosenAddress2}
+                    chosenAddress3={this.state.chosenAddress3}
+                    chosenCategory={this.state.chosenCategory}
                     chosenPhoneNum={this.state.chosenPhoneNum}
+                    chosenYelpUrl={this.state.chosenYelpUrl}
                 />)
         } else {
             return false
@@ -120,7 +118,6 @@ class HomeScreen extends Component {
 
     render() {
         return (
-
             <div>
                 {this.renderWheel()}
                 {this.renderResCard()}
