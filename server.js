@@ -35,3 +35,5 @@ db.sequelize.sync({force: true}).then(function () {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   })
 })
+
+// just making a minor change to commit
