@@ -24,7 +24,11 @@ module.exports = function (sequelize, DataTypes) {
     userEmail: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    fave1: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   }, {
       freezeTableName: true,
 
@@ -33,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
     User.associate = function(models) {
       // Associating Author with Posts
       // When an Author is deleted, also delete any associated Posts
-      User.hasMany(models.userFaves, {
+      User.hasMany(models.restaurants, {
         onDelete: "cascade"
       });
     };
