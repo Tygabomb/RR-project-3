@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import Wheel from "../../components/Wheel/";
 import API from "../../utils/api";
-import ResultCard from "../../components/ResultCard"
 
 
 
 class HomeScreen extends Component {
-    super(props){
-    };
-    constructor() {
-        super();
-        this.state = {
+    state = {
         options: [],
         baseSize: 300,
         apiData: [],
@@ -28,7 +23,6 @@ class HomeScreen extends Component {
         chosenId: '',
         chosenPrice: '',
     }
-}
     componentDidMount() {
         this.setState({
             options: ['', '', '', '', '', '', '', '', '', '']
@@ -103,27 +97,10 @@ class HomeScreen extends Component {
         }
     }
 
-  renderResCard = () => {
-      if (this.state.chosenCategories.length > 0){
-        return (
-            <ResultCard 
-            chosenImage_url={this.state.chosenImage_url}
-            chosenName={this.state.chosenName}
-            chosenAddress={this.state.chosenAddress}
-            chosenCategories={this.state.chosenCategories}
-            chosenPhoneNum={this.state.chosenPhoneNum}
-            
-            />)
-        
-      }
-    }
-
     render() {
         return (
-            
             <div>
                 {this.renderWheel()}
-                {this.renderResCard()} 
             </div>
         )
     }
