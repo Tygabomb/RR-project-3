@@ -1,34 +1,27 @@
 import React, { Component } from 'react';
 import Wheel from "../../components/Wheel/";
 import API from "../../utils/api";
-import ResultCard from "../../components/ResultCard"
 
 
 
 class HomeScreen extends Component {
-    super(props) {
-    };
-    constructor() {
-        super();
-        this.state = {
-            options: [],
-            baseSize: 300,
-            apiData: [],
-            chosenName: '',
-            chosenYelpUrl: '',
-            chosenRating: 0,
-            chosenAddress1: '',
-            chosenAddress2: '',
-            chosenAddress3: '',
-            chosenLat: 0,
-            chosenlong: 0,
-            chosenImage_url: '',
-            chosenCategory: '',
-            chosenCategories: '',
-            chosenPhoneNum: '',
-            chosenId: '',
-            chosenPrice: '',
-        }
+    state = {
+        options: [],
+        baseSize: 300,
+        apiData: [],
+        chosenName: '',
+        chosenYelpUrl: '',
+        chosenRating: 0,
+        chosenAddress1: '',
+        chosenAddress2: '',
+        chosenAddress3: '',
+        chosenLat: 0,
+        chosenlong: 0,
+        chosenImage_url: '',
+        chosenCategory: '',
+        chosenPhoneNum: '',
+        chosenId: '',
+        chosenPrice: '',
     }
     componentDidMount() {
         this.setState({
@@ -104,27 +97,10 @@ class HomeScreen extends Component {
         }
     }
 
-    renderResCard = () => {
-        if (this.state.chosenCategory.length > 0) {
-            return (
-                <ResultCard
-                    chosenImage_url={this.state.chosenImage_url}
-                    chosenName={this.state.chosenName}
-                    chosenAddress={this.state.chosenAddress}
-                    chosenCategories={this.state.chosenCategories}
-                    chosenPhoneNum={this.state.chosenPhoneNum}
-                />)
-        } else {
-            return false
-        }
-    }
-
     render() {
         return (
-
             <div>
                 {this.renderWheel()}
-                {this.renderResCard()}
             </div>
         )
     }
