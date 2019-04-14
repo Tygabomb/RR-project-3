@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import HomeScreen from "../../pages/homeScreen";
+import Axios from 'axios'
 
 class Application extends Component {
     constructor() {
         super();
-        this.state = {
-            userLat: 0,
-            userLong: 0
-        }
+        this.state = {}
     }
+
 
 
     getPosition = () => {
