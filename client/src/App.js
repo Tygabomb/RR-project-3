@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar";
 import Profile from "./components/ProfilePage";
 import RegPage from "./components/RegPage";
 import NoMatch from "./pages/NoMatch";
-// import ResultCard from "./components/ResultCard";
+import ResultCard from "./components/ResultCard";
 
 // This is where the options for Yelp should go (ideally)
 // const options = [
@@ -37,30 +37,30 @@ class App extends Component {
 
   render() {
     return (
-        <Router>
-          <Switch>
-            <Route exact path="/" component={LoginPage} />
-            <Route exact path="/app">
-              <Navbar />
-              <Application />
-              <Footer />
-            </Route>
-            <Route exact path="/register" component={RegPage} />
-            <Route exact path="/favorites">
-              <Navbar />
-              <Footer />
-            </Route>
-            <Route exact path="/profile">
+      <Router>
+        <Switch>
+          <Route exact path="/" component={LoginPage} />
+          <Route exact path="/app">
+            <Navbar />
+            <Application />
+            <Footer />
+          </Route>
+          <Route exact path="/register" component={RegPage} />
+          <Route exact path="/favorites">
+            <Navbar />
+            <Footer />
+          </Route>
+          <Route exact path="/profile">
             <Route component={NoMatch} />
-              <Navbar />
-              <Profile />
-              <Footer />
-            </Route>
-            <Route exact path="/test">
-              <ResultCard />
-            </Route>
-          </Switch>
-        </Router>
+            <Navbar />
+            <Profile />
+            <Footer />
+          </Route>
+          <Route exact path="/test">
+            <ResultCard />
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }
