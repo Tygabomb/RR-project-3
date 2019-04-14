@@ -1,12 +1,12 @@
 const db = require('../models')
-
+const Keys = require('../config/keys')
 const Axios = require('axios')
 
 module.exports = function yelp(req, res) {
     console.log("Accessing Yelp")
     Axios.get("https://api.yelp.com/v3/businesses/search", {
         headers: {
-            Authorization: `Bearer ${process.env.YELP_SECRET_KEY}`,
+            Authorization: `Bearer ${Keys.yelp.secret}`,
         },
 
         params: {
