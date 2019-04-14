@@ -17,13 +17,16 @@ class HomeScreen extends Component {
         chosenName: '',
         chosenYelpUrl: '',
         chosenRating: 0,
-        chosenAddress: {},
-        chosenCoordinates: {},
+        chosenAddress1: '',
+        chosenAddress2: '',
+        chosenAddress3: '',
+        chosenLat: 0,
+        chosenlong: 0,
         chosenImage_url: '',
-        chosenCategories: [],
+        chosenCategory: '',
         chosenPhoneNum: '',
         chosenId: '',
-        chosenPrice: ''
+        chosenPrice: '',
     }
 }
     componentDidMount() {
@@ -39,16 +42,24 @@ class HomeScreen extends Component {
     handleOnComplete = () => {
         for (let i = 0; i < this.state.apiData.length; i++) {
             const { restName, restId, restImageUrl, restRating, restCoordinates, restPrice, restLocation, restCategories, restPhoneNum, yelpUrl } = this.state.apiData[i]
-            const address = restLocation.display_address
+            const addressLine1 = restLocation.display_address[0]
+            const addressLine2 = restLocation.display_address[1]
+            const addressLine3 = restLocation.display_address[2]
+            const title1 = restCategories[0].title
+            const lat = restCoordinates.latitude
+            const long = restCoordinates.longitude
             if (restName === this.state.chosenName) {
                 this.setState({
                     chosenId: restId,
                     chosenImage_url: restImageUrl,
                     chosenRating: restRating,
-                    chosenCoordinates: restCoordinates,
+                    chosenLat: lat,
+                    chosenlong: long,
                     chosenPrice: restPrice,
-                    chosenAddress: address,
-                    chosenCategories: restCategories,
+                    chosenAddress1: addressLine1,
+                    chosenAddress2: addressLine2,
+                    chosenAddress3: addressLine3,
+                    chosenCategory: title1,
                     chosenPhoneNum: restPhoneNum,
                     chosenYelpUrl: yelpUrl
                 })

@@ -56,6 +56,9 @@ class App extends Component {
               <Profile />
               <Footer />
             </Route>
+            <Route exact path="/test">
+              <ResultCard />
+            </Route>
           </Switch>
         </Router>
     );
