@@ -21,17 +21,17 @@ class ResultCard extends Component {
         this.setState({ [e.target.id]: e.target.value });
     };
 
+    addClass = (e) => {
+        e.target.classList.add("click");
+    }
 
     render() {
-
         const { errors } = this.state;
-
-
-
 
         return (
             <div className="container">
                 <div className="card my-3 mx-auto">
+                    <i className="fas fa-star" id="favorite" onClick={this.addClass} />
                     <div className="row">
                         <div className="col text-center text-sm-left">
                             <img className="img img-fluid img-thumbnail m-3" alt={this.props.chosenYelpUrl} src={this.props.chosenImage_url} />
