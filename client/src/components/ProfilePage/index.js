@@ -14,11 +14,11 @@ class Profile extends Component {
     updateLocations = () => {
         let data = [
             {
-                image: "https://s3-media4.fl.yelpcdn.com/bphoto/LTmrHqUz7HnCgxJ5XCi1Ow/o.jpg",
-                name: "May's Counter Chicken & Waffles",
-                address: "2945 E Speedway Blvd, Tucson, AZ 85716",
+                image: "https://via.placeholder.com/300",
+                name: "The Random Restaurant #1",
+                address: "1234 Fake Street, Springfield, MA 01234",
                 type: "Diner",
-                phoneNum: "(520) 327-2421",
+                phoneNum: "123-456-7890",
                 website: "https://www.yelp.com/",
                 yelp: "https://www.yelp.com/"
             },
