@@ -30,12 +30,14 @@ class Application extends Component {
         document.getElementById("root").style.height = "100vh";
         document.getElementById("root").style.display = "flex";
         document.getElementById("root").style.flexDirection = "column";
+        document.body.style.background = "url('/images/background.png')";
     }
 
     componentWillUnmount = () => {
         document.getElementById("root").style.height = "";
         document.getElementById("root").style.display = "block";
         document.getElementById("root").style.flexDirection = "row";
+        document.body.style.background = "";
     }
 
     flexBody = {
