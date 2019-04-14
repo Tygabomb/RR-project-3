@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Wheel from "../../components/Wheel/";
 import API from "../../utils/api";
+import ResultCard from '../../components/ResultCard'
 
 
 
@@ -97,10 +98,29 @@ class HomeScreen extends Component {
         }
     }
 
+    renderResCard = () => {
+        if (this.state.chosenCategory.length > 0) {
+            return (
+                <ResultCard
+                    chosenImage_url={this.state.chosenImage_url}
+                    chosenName={this.state.chosenName}
+                    chosenAddress1={this.state.chosenAddress1}
+                    chosenAddress2={this.state.chosenAddress2}
+                    chosenAddress3={this.state.chosenAddress3}
+                    chosenCategory={this.state.chosenCategory}
+                    chosenPhoneNum={this.state.chosenPhoneNum}
+                    chosenYelpUrl={this.state.chosenYelpUrl}
+                />)
+        } else {
+            return false
+        }
+    }
+
     render() {
         return (
             <div>
                 {this.renderWheel()}
+                {this.renderResCard()}
             </div>
         )
     }

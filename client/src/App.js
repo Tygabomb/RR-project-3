@@ -37,29 +37,29 @@ class App extends Component {
 
   render() {
     return (
-        <Router>
-          <Switch>
-            <Route exact path="/" component={LoginPage} />
-            <Route exact path="/app">
-              <Navbar />
-              <Application />
-              <Footer />
-            </Route>
-            <Route exact path="/register" component={RegPage} />
-            <Route exact path="/favorites">
-              <Navbar />
-              <Footer />
-            </Route>
-            <Route exact path="/profile">
-              <Navbar />
-              <Profile />
-              <Footer />
-            </Route>
-            <Route exact path="/test">
-              <ResultCard />
-            </Route>
-          </Switch>
-        </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={LoginPage} />
+          <Route exact path="/app">
+            <Navbar />
+            <Application />
+            <Footer />
+          </Route>
+          <Route exact path="/register" component={RegPage} />
+          <Route exact path="/favorites">
+            <Navbar />
+            <Footer />
+          </Route>
+          <Route exact path="/profile">
+            <Navbar />
+            <Profile />
+            <Footer />
+          </Route>
+          <Route exact path="/test">
+            <ResultCard />
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }

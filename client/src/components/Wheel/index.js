@@ -194,7 +194,6 @@ class Roulette extends React.Component {
         this.props.onComplete(this.setState({ chosenName: text }, () => {
             this.props.setChosenName(text)
         }));
-        console.log(this.state.chosenName)
     }
 
 
