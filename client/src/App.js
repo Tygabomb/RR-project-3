@@ -11,7 +11,7 @@ import LoginPage from "./components/LoginPage";
 import Navbar from "./components/Navbar";
 import Profile from "./components/ProfilePage";
 import RegPage from "./components/RegPage";
-import ResultCard from "./components/ResultCard";
+import NoMatch from "./pages/NoMatch";
 // import ResultCard from "./components/ResultCard";
 
 // This is where the options for Yelp should go (ideally)
@@ -51,6 +51,7 @@ class App extends Component {
               <Footer />
             </Route>
             <Route exact path="/profile">
+            <Route component={NoMatch} />
               <Navbar />
               <Profile />
               <Footer />
