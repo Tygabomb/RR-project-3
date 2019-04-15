@@ -72,6 +72,10 @@ class Profile extends Component {
         return (
             <div className="container" style={this.flexBody}>
                 <br />
+                <br />
+                <br />
+                <br />
+                <br />
                 <h1 className="mx-5">Profile Information</h1>
                 <br />
                 <div className="card mx-3 mx-sm-5">
