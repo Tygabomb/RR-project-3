@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import HomeScreen from "../../pages/HomeScreen";
+import HomeScreen from "../../pages/homeScreen";
 
 class Application extends Component {
     constructor() {
