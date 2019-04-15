@@ -6,6 +6,7 @@ const app = express();
 const db = require('./models')
 const apiRoutes = require("./routes/api/users");
 const yelpRoutes = require("./routes/api/allUsers");
+const favoriteRoutes = require('./routes/api/favRestaurants')
 const passport = require("passport");
 const userRoutes = require("./routes")
 
@@ -27,6 +28,7 @@ require("./config/passport")(passport);
 // Use apiRoutes 
 app.use("/api", apiRoutes);
 app.use("/api", yelpRoutes);
+app.use("/api", favoriteRoutes)
 
 app.use(userRoutes);
 

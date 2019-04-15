@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Wheel from "../../components/Wheel/";
 import API from "../../utils/api";
 import ResultCard from '../../components/ResultCard'
-import Jump from 'jump.js'
 
 
 

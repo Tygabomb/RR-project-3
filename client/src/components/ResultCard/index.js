@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Axios from 'axios'
+import Maps from '../Maps'
 
 class ResultCard extends Component {
     super(props) {
@@ -16,8 +17,8 @@ class ResultCard extends Component {
             chosenImageUrl: "",
             chosenRating: 0,
             chosenPrice: "",
-            chosenLat: "",
-            chosenLong: "",
+            chosenLat: '',
+            chosenLong: '',
             errors: {}
         };
     };
@@ -76,6 +77,12 @@ class ResultCard extends Component {
                                 </li>
                                 <li className="list-group-item">
                                     <b>Rating:</b> {this.props.chosenRating}⭐    ||    <b>Price Range:</b> {this.props.chosenPrice}
+                                </li>
+                                <li className="list-group-item">
+                                    <Maps
+                                        lat={this.props.chosenLat}
+                                        lng={this.props.chosenLong}
+                                    />
                                 </li>
                                 <li className="list-group-item">
                                     <a className="btn btn-primary text-center text-sm-left" href={this.props.chosenYelpUrl} rel="noopener noreferrer" target="_blank">Yelp Profile</a>
