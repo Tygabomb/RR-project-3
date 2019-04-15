@@ -14,10 +14,21 @@ export default {
     return axios.get("https://").then(data => {
       var obj;
     });
+  },
+  restaurant: function (restaurantName, resLat, resLong, restaurantAdd1, restaurantAdd2, restaurantAdd3) {
+    return axios.post('/restuarants', {
+      restaurantName,
+      resLat,
+      resLong,
+      restaurantAdd1,
+      restaurantAdd2,
+      restaurantAdd3
+    })
   }
 };
 
-// function initMap() {
+
+// initMap = () => {
 
 //   const restaurantLoc = { lat: -25.344, lng: 131.036 };
 //   // The map, centered at result restaurant location

@@ -8,7 +8,6 @@ module.exports = function yelp(req, res) {
         headers: {
             Authorization: `Bearer ${Keys.yelp.secret}`,
         },
-
         params: {
             term: 'restaurants',
             location: '85705',

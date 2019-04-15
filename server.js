@@ -30,7 +30,7 @@ app.use("/api", yelpRoutes);
 
 app.use(userRoutes);
 
-db.sequelize.sync({force: true}).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   })

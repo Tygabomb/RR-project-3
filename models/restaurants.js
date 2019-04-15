@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
         restaurantAdd: {
             type: DataTypes.STRING,
             allowNull: false,
-        },        
+        },
         restaurantAdd2: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -27,14 +27,14 @@ module.exports = function (sequelize, DataTypes) {
             freezeTableName: true,
         });
 
-        restaurants.associate = function(models) {
-            // Associating Author with Posts
-            // When an Author is deleted, also delete any associated Posts
-            restaurants.belongsTo(models.User, {
-                foreignKey: {
-                    allowNull: false
-                }
-            });
-          };
+    restaurants.associate = function (models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        restaurants.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return restaurants;
 }
