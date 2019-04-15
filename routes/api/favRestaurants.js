@@ -6,7 +6,7 @@ var router = express.Router()
 router.post("/restaurants", function (req, res) {
   console.log(req.body);
   const restaurant = req.body.restaurant
-  db.Restaurant.create(
+  db.Restaurants.create(
     restaurant,
     {
       where: {
@@ -16,6 +16,7 @@ router.post("/restaurants", function (req, res) {
     .then((dbRestaurant) => {
       res.json(dbRestaurant)
     })
+    .catch(err => console.log(err))
 });
 
 
