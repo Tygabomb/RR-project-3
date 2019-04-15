@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Axios from 'axios'
+import Maps from '../Maps'
 
 class ResultCard extends Component {
     super(props) {
@@ -15,17 +17,42 @@ class ResultCard extends Component {
             chosenImageUrl: "",
             chosenRating: 0,
             chosenPrice: "",
+            chosenLat: '',
+            chosenLong: '',
             errors: {}
         };
+    };
+
+    onSubmit = e => {
+        e.preventDefault();
+        e.target.classList.add("click");
+
+        const restaurant = {
+            restaurantName: this.props.chosenName,
+            restaurantAdd: this.props.chosenAddress1,
+            restaurantAdd2: this.props.chosenAddress2,
+            restaurantAdd3: this.props.chosenAddress3,
+            resLat: this.props.chosenLat,
+            resLong: this.props.chosenLong,
+        };
+
+        console.log(restaurant)
+
+        Axios({
+            method: 'post',
+            url: '/api/restaurants',
+            data: restaurant
+        }).then(function (res) {
+            console.log(res)
+        }).catch(function (error) {
+            console.log(error);
+        });
     };
 
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value });
     };
 
-    addClass = (e) => {
-        e.target.classList.add("click");
-    }
 
     render() {
         const { errors } = this.state;
@@ -33,7 +60,7 @@ class ResultCard extends Component {
         return (
             <div className="container">
                 <div className="card my-3 mx-auto">
-                    <i className="fas fa-star" id="favorite" onClick={this.addClass} />
+                    <i className="fas fa-star" id="favorite" onClick={this.onSubmit} />
                     <div className="row">
                         <div className="col text-center text-sm-left">
                             <img className="img img-fluid img-thumbnail m-3" alt={this.props.chosenYelpUrl} src={this.props.chosenImage_url} />
@@ -52,7 +79,13 @@ class ResultCard extends Component {
                                     <b>Rating:</b> {this.props.chosenRating}⭐    ||    <b>Price Range:</b> {this.props.chosenPrice}
                                 </li>
                                 <li className="list-group-item">
-                                    <a className="btn btn-primary text-center text-sm-left" href={this.props.chosenYelpUrl} rel="noopener noreferrer" target="_blank">Yelp Profile</a>
+                                    <Maps
+                                        lat={this.props.chosenLat}
+                                        lng={this.props.chosenLong}
+                                    />
+                                </li>
+                                <li className="list-group-item">
+                                    <a className="btn btn-danger text-center text-sm-left" href={this.props.chosenYelpUrl} rel="noopener noreferrer" target="_blank">Yelp Profile</a>
                                 </li>
                             </ul>
                         </div>
