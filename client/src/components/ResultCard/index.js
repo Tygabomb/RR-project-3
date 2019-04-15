@@ -78,12 +78,12 @@ class ResultCard extends Component {
                                 <li className="list-group-item">
                                     <b>Rating:</b> {this.props.chosenRating}⭐    ||    <b>Price Range:</b> {this.props.chosenPrice}
                                 </li>
-                                {/* <li className="list-group-item">
+                                <li className="list-group-item">
                                     <Maps
                                         lat={this.props.chosenLat}
                                         lng={this.props.chosenLong}
                                     />
-                                </li> */}
+                                </li>
                                 <li className="list-group-item">
                                     <a className="btn btn-danger text-center text-sm-left" href={this.props.chosenYelpUrl} rel="noopener noreferrer" target="_blank">Yelp Profile</a>
                                 </li>
