@@ -16,7 +16,6 @@ class HomeScreen extends Component {
         chosenRating: 0,
         chosenAddress1: '',
         chosenAddress2: '',
-        chosenAddress3: '',
         chosenLat: 0,
         chosenlong: 0,
         chosenImage_url: '',
@@ -54,7 +53,6 @@ class HomeScreen extends Component {
                     chosenPrice: restPrice,
                     chosenAddress1: addressLine1,
                     chosenAddress2: addressLine2,
-                    chosenAddress3: addressLine3,
                     chosenCategory: title1,
                     chosenPhoneNum: restPhoneNum,
                     chosenYelpUrl: yelpUrl
@@ -107,12 +105,13 @@ class HomeScreen extends Component {
                     chosenName={this.state.chosenName}
                     chosenAddress1={this.state.chosenAddress1}
                     chosenAddress2={this.state.chosenAddress2}
-                    chosenAddress3={this.state.chosenAddress3}
                     chosenCategory={this.state.chosenCategory}
                     chosenPhoneNum={this.state.chosenPhoneNum}
                     chosenYelpUrl={this.state.chosenYelpUrl}
                     chosenRating={this.state.chosenRating}
                     chosenPrice={this.state.chosenPrice}
+                    chosenLat={this.state.chosenLat}
+                    chosenLong={this.state.chosenlong}
                 />)
         } else {
             return false
