@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Axios from 'axios'
-import Maps from '../Maps'
+// import Maps from '../Maps'
+// import GoogleMapReact from 'google-map-react'
 
+
+// const MapMarker = ({ text }) => <div>{text}</div>
 class ResultCard extends Component {
     super(props) {
     };
@@ -22,6 +25,8 @@ class ResultCard extends Component {
             errors: {}
         };
     };
+
+
 
     onSubmit = e => {
         e.preventDefault();
@@ -54,6 +59,7 @@ class ResultCard extends Component {
     };
 
 
+
     render() {
         const { errors } = this.state;
 
@@ -78,12 +84,14 @@ class ResultCard extends Component {
                                 <li className="list-group-item">
                                     <b>Rating:</b> {this.props.chosenRating}⭐    ||    <b>Price Range:</b> {this.props.chosenPrice}
                                 </li>
-                                <li className="list-group-item">
+                                {/* <li className="list-group-item">
                                     <Maps
-                                        lat={this.props.chosenLat}
-                                        lng={this.props.chosenLong}
+                                        defaultCenter={{
+                                            lat: this.props.chosenLat,
+                                            lng: this.props.chosenLong
+                                        }}
                                     />
-                                </li>
+                                </li> */}
                                 <li className="list-group-item">
                                     <a className="btn btn-danger text-center text-sm-left" href={this.props.chosenYelpUrl} rel="noopener noreferrer" target="_blank">Yelp Profile</a>
                                 </li>

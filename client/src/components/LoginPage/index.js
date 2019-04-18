@@ -24,7 +24,7 @@ class LoginPage extends Component {
             userName: this.state.formUsername,
             userPassword: this.state.formPassword
         };
-        
+
         this.props.history.push('/app');
 
         console.log(userData);
@@ -53,34 +53,34 @@ class LoginPage extends Component {
             <div style={this.containerStyle}>
                 <div className="card mx-2 mx-sm-auto" style={this.cardStyle}>
                     <br />
-                    <h2 className="text-center">Welcome to R + R!</h2>
+                    <h2 className="text-center">Welcome to Restaurant Roulette!</h2>
                     <br />
                     <form>
                         <div className="form-group mx-5">
                             <label htmlFor="formUsername">Username</label>
-                            <input 
+                            <input
                                 onChange={this.onChange}
                                 // value={this.state.userName}
                                 error={errors.userName}
-                                type="text" 
-                                className="form-control" 
-                                id="formUsername" 
+                                type="text"
+                                className="form-control"
+                                id="formUsername"
                             />
                         </div>
                         <div className="form-group mx-5">
                             <label htmlFor="formPassword">Password</label>
-                            <input 
+                            <input
                                 onChange={this.onChange}
                                 // value={this.state.userPassword}
                                 error={errors.userPassword}
-                                type="password" 
-                                className="form-control" 
-                                id="formPassword" 
+                                type="password"
+                                className="form-control"
+                                id="formPassword"
                             />
                         </div>
                         <div className="text-center">
-                            <Link 
-                                className="btn btn-primary d-inline-block mx-1" 
+                            <Link
+                                className="btn btn-primary d-inline-block mx-1"
                                 to="/register"
                             >
                                 Register
